@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+   <form id="user">
+        <input type="text" name="username" id="name">
+        <input type="password" name="password" id="password">
+        <input type="button" value="提交" id="btn">
+   </form>
+   <script>
+       var btn=document.querySelector('#btn')
+       var formDate=document.querySelector('#user')
+       btn.onclick=function(){
+          var form=new FormData(formDate);
+          form.set('username','ithema');
+          form.append('username','mouma')
+
+          //创建Ajax对象
+          var xhr=new XMLHttpRequest();
+          xhr.open('post','http://localhost:3000/formData');
+          xhr.send(form);
+          xhr.onload=function(){
+              if(xhr.status==200){
+                  console.log(JSON.parse(xhr.responseText));
+              }
+          }
+       }
+
+
+   </script>
+<body>
+    
+</body>
+</html>

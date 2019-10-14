@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            position: relative;
+            width: 140px;
+            height: 140px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            color: orangered;
+        }
+        .box img{
+            width: 100px;
+            height: 100px;
+        }
+        .box i{
+            position: absolute;
+            top: 0;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            cursor: pointer;
+            color: red;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        淘宝二维码
+        <img  src="image/tao.png" alt="">
+        <i class="close-btn">x</i>
+    </div>
+
+    <script>
+        var box=document.querySelector('.box');
+        var close=document.querySelector('.close-btn');
+        close.onclick=function(){
+            box.style.display='none';
+        }
+    </script>
+</body>
+</html>

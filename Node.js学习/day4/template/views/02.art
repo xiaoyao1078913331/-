@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 标准语法 -->
+    <p>
+        {{if age>30}}
+        年龄大于30
+        {{else if age>20}}
+        年龄大于20
+        {{else}}
+        年龄不符合规则
+        {{/if}}
+    </p>
+
+    <!-- 原始语法 -->
+    <%if(age>19) {%>
+    年龄大于18
+    <% }else if(age<15){%>
+        年龄小于15
+    <%}%>
+
+   
+</body>
+
+</html>

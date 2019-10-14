@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>臭豆腐</li>
+        <li>大猪蹄子</li>
+        <li>红烧狮子头</li>
+        <li>顿猪脑</li>
+    </ul>
+
+    <script>
+        //闭包关闭3秒钟之后，打印所有li元素的内容
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            (function (index) {
+                setTimeout(function () {
+                    console.log(lis[index].innerHTML);
+                }, 3000)
+            })(i)
+        }
+
+       
+    </script>
+</body>
+
+</html>

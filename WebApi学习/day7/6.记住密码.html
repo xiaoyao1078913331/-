@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    用户名：<input type="text" class="uname">
+    <br>
+    密&nbsp;&nbsp;码: <input type="password" class="password">
+    <br>
+    记住密码<input type="checkbox" class="remenber">
+    <input type="button" value="按钮" class="btn">
+    <script>
+        var uname = document.querySelector('.uname');
+        var password = document.querySelector('.password');
+        var remenber = document.querySelector('.remenber');
+        var btn = document.querySelector('.btn');
+        var username = uname.value;
+        var psd = password.value;
+        if (localStorage.getItem('uname') && localStorage.getItem('password')) {
+            uname.value = localStorage.getItem('uname');
+            password.value = localStorage.getItem('password');
+            remenber.checked = true;
+        }
+        btn.addEventListener('click', function () {
+            if (uname.value == '' && password.value == '') {
+                alert('用户名与密码不能为空');
+            }
+
+            if (remenber.checked) {
+                localStorage.setItem('uname', uname.value);
+                localStorage.setItem('password', password.value);
+            }else {
+                localStorage.removeItem('uname');
+                localStorage.removeItem('password');
+            }
+
+        })
+    </script>
+</body>
+
+</html>

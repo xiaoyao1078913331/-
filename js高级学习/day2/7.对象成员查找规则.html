@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function star(name, age) {
+            this.uname = name;
+            this.age = age;
+
+        }
+        star.prototype.run=function(){
+            console.log('我可以跑步');
+        }
+        // star.prototype.sex='男';
+        Object.prototype.sex='男';
+       var a1=new star('小哥',19);
+       console.log(a1.sex);
+       console.log(a1);
+       
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        var that;
+        class Star{
+            constructor(uname,age){
+                // constructor里面的this指向的是创建的实例对象
+                console.log(this);
+                that=this;
+                this.uname=uname;
+                this.age=age;
+                //调用实例对象的sing()
+                this.sing();
+                this.btn=document.querySelector('button');
+                this.btn.onclick=this.sing;
+            }
+            sing(){
+                console.log(this);
+                console.log(that.uname);  
+            }
+        }
+        var ldh=new Star('刘德华',20);
+        console.log(that===ldh);
+        
+        // ldh.sing();
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    	/*button{
+    		display: none;
+    	}*/
+    </style>
+</head>
+<body>
+    <ul>
+    	<li>熊大</li>
+    	<li>熊二</li>
+    	<li>熊三</li>
+    </ul>
+    <button>删除</button>
+    <script>
+    	var ul=document.querySelector('ul');
+		var btn=document.querySelector('button');
+		btn.onclick=function(){
+			if(ul.length==0){
+				btn.disabled=true;
+			}else{
+				ul.removeChild(ul.children[0]);
+			}
+		}
+//     	var ul=document.querySelector('ul');
+// //  	删除元素
+		
+		
+// //		点击按钮依次删除
+// 		var btn=document.querySelector('button');
+// 	    btn.onclick=function(){
+// 			if(ul.children.length==0){
+// 				btn.disabled=true;
+// 			}else{
+// 				ul.removeChild(ul.children[0]);
+// 			}
+// 		}
+    </script>
+</body>
+</html>

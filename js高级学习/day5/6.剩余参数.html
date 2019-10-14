@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // function sum(first,...args){
+            //     console.log(first);
+            //     console.log(args);
+                
+            // }   
+            // sum(1,2,3);
+
+            
+        //     const sum=(...args) =>{
+        //         let total=0;
+        //         args.forEach(item => total+=item)
+        //         return total;
+        //     };
+        //      console.log( sum(10,20));
+        //    console.log(sum(10,20,30));
+
+           let ary1=['张三','李四','王五'];
+           let [name1,...args]=ary1;
+
+           args.forEach( item =>{
+               console.log(item);
+           })
+        // console.log(name1);
+        //    console.log(args);
+
+            // args.forEach(item =>{
+            //     console.log(item);
+                
+            // })
+         
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 借用父构造函数继承属性
+       function father(name,age){
+           this.uname=name;
+           this.age=age;
+       }
+       
+       function son(name,age,score){
+          father.call(this,name,age);
+          this.score=score;
+       }
+      var p=new son('小哥',20,100);
+        console.log(p);
+        
+    </script>
+</body>
+</html>

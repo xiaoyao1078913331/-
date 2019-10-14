@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            outline: none;
+        }
+        .box{
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        .box input{
+            width: 370px;
+            height: 30px;
+            border: none;
+        }
+        .box img{
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for="">
+            <img  src="image/close.png" alt="" id="eye">
+        </label>
+        <input type="password" name="" id="password">
+    </div>
+
+    <script>
+        // 核心思路：
+            // 通过一个变量flag，首先给他赋值为0，通过一个if判断如果为0,修改
+            // type跟src的属性，并且在给flag赋值为1，否则就执行另一个判断条件
+            // 修改他的src和type属性。并且把flag赋值为0
+
+
+        // 获取元素
+       var eye=document.getElementById('eye');
+       var input=document.getElementById('password');
+       var flag=true;
+       eye.onclick=function(){
+          if(flag){
+            input.type='text';
+            eye.src='image/open.png';
+            flag=false;
+          }else{
+            input.type='password';
+            eye.src='image/close.png';
+            flag=true;
+          }
+       }
+       
+    </script>
+</body>
+</html>

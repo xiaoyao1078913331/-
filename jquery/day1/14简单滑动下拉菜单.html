@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div {
+            position: absolute;
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        } */
+        .box1{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            overflow: hidden;
+        }
+        .box2{
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+            opacity: .5;
+            display: none;
+        }
+        .box2 p{
+            height: 100%;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>下拉滑动</button>
+    <button>上拉滑动</button>
+    <button>切换滑动</button>
+    <div>
+
+    </div>
+
+    <div class="box1">
+        <div class="box2">
+            <p>文章内容</p>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $("button").eq(0).click(function() {
+                // 下滑动 slideDown()
+                $("div").slideDown();
+            })
+            $("button").eq(1).click(function() {
+                // 上滑动 slideUp()
+                $("div").slideUp(500);
+
+            })
+            $("button").eq(2).click(function() {
+                // 滑动切换 slideToggle()
+
+                $("div").slideToggle(500);
+
+            });
+
+        });
+    </script>
+
+
+    <script >
+    
+        $(function(){
+            $('.box1').mouseenter(function(){
+                console.log(1);
+                
+                $('.box2').stop().show().animate({
+                    left:0,
+                    top:0
+                },500)
+            })
+            $('.box1').stop().mouseleave(function(){
+                $('.box2').animate({
+                    left:0,
+                    top:200
+                },500)
+               
+            })
+        })
+    </script>
+</body>
+
+</html>

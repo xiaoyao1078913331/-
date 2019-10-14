@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        var a=document.querySelector('p');
+        // 1.keyup键盘弹起的时候触发
+        // window.document.onkeyup=function(e){
+        //     console.log('我点击了');
+        //     console.log(e.keyCode);
+            
+        // }
+
+        // 2.keydown键盘按下触发
+        // document.onkeydown=function(e){
+        //     console.log('我点击了');
+        //     console.log(e.keyCode);
+        //     a.innerHTML=e.key;
+        // }
+        
+        // 3.keypress键盘按下时触发
+        document.onkeypress=function(){
+            console.log('我被点击了');
+            
+        }
+
+
+        
+
+    </script>
+</body></html>

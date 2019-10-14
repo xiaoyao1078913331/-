@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 立即执行函数
+        (function (a,b){
+            console.log(22);
+            console.log(a); //1
+            console.log(a+b); //3
+            
+        })(1,2);
+
+
+        // 第二种
+        (function sum(a){
+            console.log('第二种'+a);  //1
+            
+        }(1))
+  
+        // 立即执行函数最大的作用就是独立创建了一个作用域
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        $(function(){
+            console.log($('.box').css('width'));
+            // $('.box').css('width','400px');
+            $('.box').css({
+                width:400,
+                height:400,
+                backgroundColor:'green'
+            });
+        })
+    </script>
+</body>
+</html>

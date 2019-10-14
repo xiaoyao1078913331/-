@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function star(name,age){
+            this.uname=name;
+            this.age=age;
+            
+        }
+        star.prototype.sing=function(){
+            console.log('我会唱歌');
+        }
+
+       var n1=new star('肖遥',20);
+       var n2=new star('肖遥',20);
+    //    n1.__proto__.sing()
+        console.log(n1.__proto__);
+        console.log(n1.__proto__.constructor);
+
+    
+      
+   
+       
+    </script>
+</body>
+</html>

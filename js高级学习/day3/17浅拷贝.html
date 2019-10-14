@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝 
+        var obj={
+            id:1,
+            name:'andy',
+            msg:{
+                age:18
+            }
+        }   
+        var o={};
+    
+        //浅拷贝的方法
+        Object.assign(o,obj)
+        console.log(o);
+        o.msg.age=22;
+        console.log(o);
+        
+        
+        //  for(var k in obj){
+        //     //    k是属性名  obj[k]是属性值 obj是数据
+        //     o[k]=obj[k];
+          
+            
+        // }
+        // // console.log(o);
+
+    </script>
+</body>
+</html>

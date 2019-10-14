@@ -1,0 +1,27 @@
+{{extend './common/layout.art'}}
+  
+
+{{block 'link'}}
+  <link rel="stylesheet" href="/admin/css/error.css">
+{{/block}}
+{{block 'main'}}
+   	<div class="head404"></div>
+ 
+   	<div class="txtbg404">
+ 
+  <div class="txtbox">
+ 
+      <p>对不起，您请求的页面不存在、或已被删除、或暂时不可用</p>
+ 
+      <p class="paddingbox">请点击以下链接继续浏览网页</p>
+ 
+      <p>》<a style="cursor:pointer" href="JavaScript:history.go(-1)" >返回上一页面</a></p>
+ 
+      <p>》<a href="/admin/login">返回网站登录页面</a></p>
+ 
+    </div>
+  </div>
+  {{/block}}
+
+  
+ 

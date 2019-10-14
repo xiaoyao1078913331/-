@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">点我发送请求</button>
+
+    <script>
+        function fn1(data) {
+            console.log('客户端的fn函数被调用了');
+            console.log(data);
+
+        }
+    </script>
+
+    <!-- 1.将非同源服务器端的请求地址写在script标签的src属性中 -->
+
+    <script>
+        // 1.获取按钮
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            var script = document.createElement('script')
+            script.src = 'http://localhost:3001/test?callback=fn1';
+            //将script追加到页面中
+            document.body.appendChild(script);
+            script.onload = function () {
+                //将body中的script标签删除掉
+                document.body.removeChild(script);
+            }
+        }
+    </script>
+</body>
+
+</html>

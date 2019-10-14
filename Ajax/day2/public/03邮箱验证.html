@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>验证邮箱地址是否已经注册</title>
+    <link rel="stylesheet" href="./assets/bootstrap/dist/js/bootstrap.min.js">
+    <style type="text/css">
+        p:not(:empty) {
+            padding: 15px;
+        }
+
+        .container {
+            padding-top: 100px;
+        }
+
+        #info {
+            width: 300px;
+        }
+
+        .bg-danger {
+            background-color: red;
+        }
+
+        .bg-success {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label>邮箱地址</label>
+            <input type="email" class="form-control" placeholder="请输入邮箱地址" id="email">
+        </div>
+        <!-- 错误 bg-danger 正确 bg-success -->
+        <p id="info"></p>
+    </div>
+    <script src="/js/ajax.js"></script>
+    <script>
+         var  emailRel=document.querySelector('#email');
+         var info=document.querySelector('#info');
+         emailRel.onblur=function(){
+             var email=this.value;
+            //  验证邮箱正则表达式
+             var reg=/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+             if(!reg.test(email)){
+                 info.innerHTML='邮箱格式输入有误';
+                 info.className='bg-danger';
+                 return;
+             }
+
+             ajax({
+                 type:'get',
+                 url:'http://localhost:3000/verifyEmailAdress',
+                 data:{
+                     email:email
+                 },
+                 success:function(result){
+                    if(result.code==1000){
+                        info.innerHTML='邮箱正确'
+                        info.className='bg-success'
+                    }else if(result.code==1001){
+                        info.innerHTML='邮箱不正确';
+                        info.className='bg-danger'
+                    }
+                 }
+                 ,error:function(result){
+                    console.log(result);
+                    
+                 }
+             })
+         }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+{{include './commen/header.art' }}
+<%include('./commen/header.art')%>
+<div>{{msg}}</div>
+<%include('./commen/footer.art')%>
+{{include './commen/footer.art'}}

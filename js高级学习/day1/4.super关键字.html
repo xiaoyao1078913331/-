@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 父类有加法方法
+        class Father{
+             // 类的共有属性放到 constructor 里面
+            constructor(x,y){
+                this.x=x;
+                this.y=y;
+            }
+            sum(){
+                console.log(this.x+this.y);
+                
+            }
+        }
+        class Son extends Father {
+            constructor(x,y){
+                // 必须在子类之前调用
+                super(x,y);
+                this.x=x;
+                this.y=y;
+            }
+            subtract(){
+                console.log(this.x-this.y);
+                
+            }
+        }
+        var son=new Son(5,3);
+        son.sum();
+        son.subtract();
+
+    </script>
+</body>
+</html>

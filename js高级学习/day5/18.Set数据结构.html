@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Add(value): 添加某个值， 返回Set结构本身
+        // Delete(value): 删除某个值， 返回一个布尔值， 表示删除是否成功
+        // Has(value)： 返回一个布尔值， 表示该值是否为Set的成员
+        // Clear()： 清除所有成员， 没有返回值
+
+        const s4=new Set();
+        s4.add('a').add('b').add('c');
+        console.log(s4);
+        
+        const r1=s4.delete('b');
+        console.log(s4);
+        console.log(r1); //true  删除成功
+        
+        //判断某一个值是否是数据结构中的成员 使用has
+        const s2=s4.has('a');
+        console.log(s2);
+
+        // 清除所有
+        s4.clear();
+        console.log(s4);
+        
+        
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <ul class="nav">
+        <li>首页</li>
+        <li>产品</li>
+        <li>首页</li>
+        <li>产品</li>
+        <li>首页</li>
+        <li>产品</li>
+
+    </ul>
+
+    <script>
+        var box=document.getElementsByClassName('box');
+        console.log(box);
+        
+        var li=document.querySelector('li');
+        console.log(li);
+
+        var lis=document.querySelectorAll('li');
+        for(var i=0;i<lis.length;i++){
+            console.log(lis[i].innerText);
+            
+        }
+        
+        
+        // document.getElementsByClassName根据类名获取某些元素集合
+        // var box=document.getElementsByClassName('box');
+        // console.log(box);
+        // console.log(typeof box)
+        // Element.prototype.getElementsByClassName=document.prototype.getElementsByClassName=Function() 
+
+        // var first=document.querySelector('.box');
+        // console.log(first);
+        
+        // var nav=document.querySelector('#nav');
+        // console.log(nav);
+
+        // var lis=document.querySelector('li');
+        // // console.log(lis);
+        
+        // var lis2=document.querySelectorAll('li');
+        // for(var i=0;i<lis2.length;i++){
+        //     console.log(lis2[i]);
+        // }
+        
+        
+        
+    </script>
+</body>
+</html>

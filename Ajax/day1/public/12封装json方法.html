@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<button id="btn">点击提交</button>
+
+<body>
+    <script>
+        function fn(data) {
+            console.log(data);
+        }
+    </script>
+
+    <script>
+        var btn = document.querySelector('#btn');
+        btn.onclick = function () {
+            json({
+                url: 'http://localhost:3001/better?callback=fn'
+            })
+        }
+
+        function json(options) {
+            // 动态创建script标签
+            var script = document.createElement('script');
+            //给script标签添加src属性
+            script.src = options.url;
+            document.body.appendChild(script);
+            //当加载完成之后执行函数
+            script.onload = function () {
+                //删除script标签
+                document.body.removeChild(script);
+            }
+        }
+    </script>
+</body>
+
+</html>

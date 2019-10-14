@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+</head>
+<body>
+    <ul class="nav">
+        <li>臭豆腐</li>
+        <li>大猪蹄子</li>
+        <li>红烧狮子头</li>
+        <li>顿猪脑</li>
+    </ul>
+    <script>
+        var lis=document.querySelector('.nav').querySelectorAll('li');
+    //    1.利用动态添加属性
+        for(var i=0;i<lis.length;i++){
+            lis[i].index=i;
+            lis[i].onclick=function(){
+                // console.log($(this).index());
+                console.log(i);
+                // console.log(this.index);
+                
+            }
+        }
+
+        // 1.利用闭包的方式获得当前li的索引号
+        for(var i=0;i<lis.length;i++){
+            (function(index){
+                lis[index].onclick=function(){
+                    console.log(index); //获得索引号
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>

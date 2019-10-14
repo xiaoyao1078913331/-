@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+ 
+       button[type='aa']{
+           color: red;
+       }
+    </style>
+</head>
+<body>
+   <button class="ba" type="aa">1</button>
+   <button class="b">2</button>
+   <button class="b">3</button>
+   <button class="b">4</button>
+   <button class="b">5</button>
+
+    <script>
+        var btn=document.querySelectorAll('button');
+        for(var i=0;i<btn.length;i++){
+            btn[i].onclick=function(){
+                 for(var i=0;i<btn.length;i++){
+                     btn[i].style.backgroundColor='';
+                 }
+                 this.style.backgroundColor='pink';
+            }
+        }
+        // // 获取所有按钮元素
+        // var btns=document.getElementsByTagName('button');
+        // for(var i=0;i<btns.length;i++){
+        //     btns[i].onclick=function(){
+        //         // 1.我们先把所有的背景颜色去掉
+        //         for(var i=0;i<btns.length;i++){
+        //             btns[i].style.backgroundColor=' ';
+        //         }
+        //         // 2.然后才让当前的背景颜色为pink
+        //         this.style.backgroundColor='pink';
+        //     }
+        // }
+    </script>
+   
+</body>
+</html>

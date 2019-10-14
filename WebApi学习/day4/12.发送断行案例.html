@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            height: 40px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100px;
+            height: 42px;
+
+        }
+    </style>
+</head>
+
+<body>
+    手机号码：<input type="number"><button>发送</button>
+    <script>
+        var btn = document.querySelector('button');
+        var time = 5;
+        btn.addEventListener('click',function(){
+            btn.disabled=true;
+            var timer=setInterval(function(){
+                //如果时间到了最后一秒
+                if(time==0){
+                    //清除定时器
+                    clearInterval(timer);
+                    btn.disabled=false;
+                    btn.innerHTML='发送';
+                    //重新赋值
+                    time=5;
+                }else{
+                    btn.innerHTML='倒计时'+time+'秒';
+                    time--;
+                }
+            },1000)
+        })
+       
+    </script>
+</body>
+
+</html>

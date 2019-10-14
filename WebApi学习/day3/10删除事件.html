@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // var div=document.querySelectorAll('div');
+        // div[1].addEventListener('click',fn)  //里面的fn不需要（）号
+        // function fn(){
+        //     alert('aa');
+        //     div[1].removeEventListener('click',fn);
+        // }
+
+        // var div=document.querySelectorAll('div');
+        // div[1].addEventListener('click',fn);
+        // function fn(){
+        //     alert(112221);
+        //     div[1].removeEventListener('click',fn)
+        // }
+
+        var div=document.querySelectorAll('div');
+        div[1].addEventListener('click',fn);
+        function fn(){
+            alert(111);
+            div[1].removeEventListener('click',fn);
+        }
+        
+        
+    </script>
+</body>
+</html>

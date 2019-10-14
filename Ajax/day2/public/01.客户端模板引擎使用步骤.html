@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--1. 引入模板引擎 -->
+    <script src="js/template-web.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            width: 400px;
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .red{
+           color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>电影编号</th>
+                <th>电影名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbo">
+
+        </tbody>
+    </table>
+
+    <!-- 4.显示数据 -->
+    <div id="test"></div>
+    <!-- 2.准备模板 id是区分模板的 -->
+    <script type="text/html" id="first">
+        {{each user}}
+        <tr>
+            <td>{{$value.name}}</td>
+            <td>{{$value.number}}</td>
+            <td class="red">{{$value.price}}￥</td>
+        </tr>
+        {{/each}}
+    </script>
+
+    <script>
+        // 3.告诉模板引擎将那个数据和那个模板进行拼接
+        // 1.模板  2数据对象类型
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://localhost:3000/get');
+        xhr.send();
+        xhr.onload = function () {
+
+            var result = JSON.parse(xhr.responseText)
+        
+            var html = template('first', result);
+            console.log(html);
+            
+            document.querySelector('#tbo').innerHTML=html;
+        }
+       
+    </script>
+</body>
+
+</html>

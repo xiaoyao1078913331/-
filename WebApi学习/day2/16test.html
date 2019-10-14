@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        li {
+            float: left;
+            /* margin: 0 3px; */
+            list-style: none;
+        }
+
+        .comment {
+            width: 700px;
+            height: 400px;
+            margin: 50px auto;
+            /* background-color: pink; */
+        }
+
+        .coment-hd {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background-color: rgb(240, 240, 242);
+        }
+
+        .alert {
+            position: absolute;
+            display: none;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-120px);
+            width: 250px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: white;
+            background-color: black;
+            opacity: .5;
+        }
+
+        .alert span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            background-color: #b0b0b0;
+            cursor: pointer;
+            background-size: 14px 14px;
+            z-index: 2;
+        }
+
+        input {
+            outline: none;
+            color: #333;
+            text-align: top;
+            width: 100%;
+            height: 70px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        .coment-hd li:nth-child(4) {
+            float: right;
+            font-size: 12px;
+            width: 40px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .coment {
+            width: 40px;
+            height: 26px;
+        }
+
+        .coment-hd li:nth-child(4):hover {
+            background-color: #b0b0b0;
+        }
+
+        .comment-bd h5 {
+            width: 100%;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .comment-bd ul {
+            width: 100%;
+            /* background-color: yellowgreen; */
+        }
+
+        .pinlun-lf {
+            float: left;
+            width: 70px;
+            height: 100px;
+            line-height: 60px;
+        }
+
+        .pinlun-lf a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 5px;
+            border-radius: 50%;
+            /* background-color: pink; */
+            background: url(image/p1.jpg) no-repeat;
+            background-size: 40px auto;
+        }
+
+        .blue {
+            color: #6593f2;
+        }
+
+        .pinlun-rg {
+            float: left;
+            width: 610px;
+            height: 100px;
+            /* background-color: blue; */
+        }
+
+        .pinlun-rg {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .footer {
+            margin-left: 70px;
+            font-size: 12px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comment">
+        <div class="coment-hd">
+            <input type="text">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="image/a.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="image/b.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="image/c.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="coment">
+                        评论
+                    </a>
+                </li>
+
+            </ul>
+            <div class="alert">
+                写点东西吧，内容不能为空哦!
+                <span class="close">X</span>
+            </div>
+        </div>
+        <!-- 评论 -->
+        <div class="comment-bd">
+            <h5>精彩评论</h5>
+            <ul class="Mycomment">
+                <li class="My">
+                    <div class="pinlun">
+                        <div class="pinlun-lf">
+                            <a href="#"></a>
+                        </div>
+                        <div class="pinlun-rg">
+                            <span class="uname blue">要日夜兼程:</span>
+                            <span>记得有次采访，傻别说聪别特别奇怪，会把自己关在房子里给自己写信。从那时候就觉得聪别一定是个内心十分丰富的人，是个独特又迷人的人。
+                                现在他把信写成了歌，终于能听到聪别成长的故事。他跟你我一样普通，偶尔会有些不合群，不爱学习，但他一直知道自己想要什么，并且一直坚持着。</span>
+                        </div>
+                        <div class="footer">
+                            <p>8月16日21:55</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var coment = document.querySelector('.coment');
+        var text = document.querySelector('input');
+        var alert = document.querySelector('.alert');
+        var close = document.querySelector('.close');
+        var ul = document.querySelector('.Mycomment');
+        console.log(ul);
+        
+        coment.onclick = function () {
+            var ul=document.querySelector('ul');
+        // 1.node.cloneNode();
+       var lili=ul.children[0].cloneNode(true);
+        ul.appendChild(lili); 
+
+            if (text.value == '') {
+                alert.style.display = 'bMycommentlock';
+                close.onclick = function () {
+                    alert.style.display = 'none';
+                }
+                return false;
+            } else {
+                var ul =document.querySelector('.Mycomment');
+                var lili=ul.children[0].cloneNode(true);
+                   ul.appendChild(lili);
+             
+            }
+
+        }
+    </script>
+</body>
+
+</html>

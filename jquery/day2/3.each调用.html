@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function() {
+            // var color=['red','blue','green'];
+
+            // // 遍历DOM元素
+            // var sum=0;
+            // //index 索引号  domEle是DOM元素
+            // $('div').each(function(index,domEle){
+            //     console.log(index);
+            //     console.log(domEle);
+                
+            //     //DOM对象转换成jquery对象
+            //     $(domEle).css('color',color[index]);
+            //     sum+=parseInt($(domEle).text());
+            // })
+            // console.log(sum);
+         
+            
+            
+
+            //遍历数组
+            var arr=[{
+                name:"tony",
+                sex:"男",
+                age:15
+            },
+            {
+                name:"小哥",
+                sex:"女",
+                age:20
+            }];
+            $.each(arr,function(i,ele){
+            //    console.log(i);
+            //    console.log(ele);  
+               console.log(ele.name);
+              
+            });
+
+            
+        })
+    </script>
+</body>
+
+</html>

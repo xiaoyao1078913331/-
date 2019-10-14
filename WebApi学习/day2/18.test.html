@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		.clearfix::before,.clearfix:after{
+			clear: both;
+			content: "";
+			display: table;
+			height: 0;
+		}
+		ul li{
+			float: left;
+			list-style: none;
+		}
+		.tab{
+			width: 500px;
+			margin:50px auto 0;
+		}
+		.nav1 li{
+			/*注意没给宽度*/
+			line-height: 40px;
+			text-align:center;
+			border: 1px solid black;
+			box-sizing:border-box;
+		}
+		.nav2 li{
+			width: 100%;
+			height: 300px;
+			text-align: center;
+			line-height: 300px;
+			font-size: 30px;
+			display: none;
+		}
+		ul .active{
+			display: block;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<!-- 评分规则：	满分100，
+	上面tab的下边线没去掉-10
+	不能更换颜色-10
+	不能更改tab长度-10
+	不是动态添加的-30
+	tab的js没实现-40 -->
+	<!-- colors = ["red","orange","yellow",'green','blue','black']; -->
+	<!-- 题目：根据给出的字符串中的颜色和长度，动态配置一个tab切换 -->
+	<!-- 提示：样式都写好了，不能再加样式，缺少的样式js来补，利用js动态添加li标签，其中nav2用类名active来切换状态 -->
+
+
+	
+	<div class="tab">
+		<ul class="nav1 clearfix"></ul>
+		<ul class="nav2 clearfix"></ul>
+	</div>
+	<script>
+		var colors = ["red","orange","yellow","green","blue"];
+
+
+		// 以下代码为测试代码
+		// 1、找人
+		var nav1 = document.querySelector('.nav1');
+		var nav2 = document.querySelector('.nav2');
+		// 2.动态配置标签
+		// 2.1根据长度给ul添加li标签
+		for(var i=0;i<colors.length;i++){
+			// 2.2创建上面的li标签以及配置样式
+			var li1 = document.createElement('li');
+			li1.style.color = 'black';
+			li1.style.background = colors[i];
+			li1.innerHTML = colors[i];
+			// console.log()
+			li1.style.width = 1/colors.length*100+"%";
+			// 2.3创建下面的li标签以及配置样式
+			var li2 = document.createElement('li');
+			li2.innerHTML = '我是'+colors[i]+'色';
+			li2.style.background = colors[i];
+			// 2.4把创建好的li标签添加到对应的ul上
+			nav1.appendChild(li1)
+			nav2.appendChild(li2)
+			// 4.4 知道需要tab切换，上下需要关联，所以首先配置的时候就给上面每个li编号
+			li1.index = i;
+		}
+		// 3.初始化，之前只是创建好标签，现在给首个添加样式
+		nav1.children[0].style.color = 'white';
+		nav1.children[0].style.borderBottom = '1px solid red';
+		nav2.children[0].className = 'active';
+		console.log(1)
+		// 4.切换
+		// 4.1等动态创建完毕之后，重新在ul找下面的元素
+		var lis1 = nav1.children;
+		var lis2 = nav2.children;
+		// 4.2给每一个元素元素绑定点击事件
+		for(var i=0;i<colors.length;i++){
+			lis1[i].onclick = function(){
+				// 4.3排他，先干掉所有人，再留下this，我自己的
+				for(var j=0;j<colors.length;j++){
+					lis1[j].style.color='black';
+					lis1[j].style.borderBottom = '1px solid black';
+					lis2[j].className = ''
+					console.log(3)
+				}		
+				// 4.5上下需要关联，所以取出之前的编号index
+				this.style.color = 'white';
+				this.style.borderBottom = '1px solid '+colors[this.index];
+				lis2[this.index].className = 'active'
+			}
+		}
+	</script>
+</body>
+</html>

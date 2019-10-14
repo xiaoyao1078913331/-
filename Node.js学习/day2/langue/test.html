@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+     <script src="jquery-i18n-properties-master/jquery.i18n.properties.js"></script>
+</head>
+<body>
+    <div id="content"> 
+            <label data-locale="username">用户名：</label><input type="text">  
+             <label data-locale="password">密码：</label><input type="password"> 
+    </div>
+    <script type="text/javascript">
+        loadProperties();  
+        function loadProperties() {  
+            $.i18n.properties({  
+                name:'strings',    //属性文件名     命名格式： 文件名_国家代号.properties
+                path:'i18n/',   //注意这里路径是你属性文件的所在文件夹
+                mode:'map',  
+                language:"Zh",     //这就是国家代号 name+language刚好组成属性文件名：strings+zh -> strings_zh.properties
+                callback:function(){  
+                    $("[data-locale]").each(function(){  
+                        console.log($(this).data("locale"));
+                        $(this).html($.i18n.prop($(this).data("locale")));  
+                    
+                    });  
+                }  
+            });  
+        }  
+    </script>
+</body>
+</html>

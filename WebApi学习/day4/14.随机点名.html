@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <button class="start">开始</button>
+    <button class="stop">停止</button>
+    <script>
+        var p=document.querySelector('p');
+        var button=document.querySelector('.start');
+        var button2=document.querySelector('.stop');
+
+      
+        var start=null;
+        fn();
+        function uname(min,max){
+            return a=Math.floor(Math.random()*(max-min+1)*min);
+           
+        }
+        function fn(){
+            var p=document.querySelector('p');
+             var arr=['肖遥','胡炳文','易心如']
+            var a=uname(1,arr.length)
+            p.innerHTML=arr[a];
+        }
+        button.onclick=function(){
+           start=setInterval(fn,190);
+        }
+        button2.onclick=function(){
+            clearInterval(start);
+        }
+      
+        
+      
+    </script>
+</body>
+</html>

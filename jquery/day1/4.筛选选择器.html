@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="fater">
+            <div class="son">儿子</div>
+            <div class="son2">儿子2</div>
+        </div>
+    </div>
+
+
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li class="item">多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+    <script>
+        $(function () {
+            //    1.父
+            // console.log($('.son').parent());
+            
+              
+
+            // //    2.子
+            // console.log($('.fater').children());
+            
+            //只选亲儿子
+            // console.log($('.nav').children('p').css('color','yellow'));  
+
+            // console.log($('.nav').find('p'));
+
+            // $('ul .item').siblings('li').css('color','red')
+            
+            $('ul li').eq(3).css('color','red')
+            
+           
+        })
+    </script>
+</body>
+
+</html>

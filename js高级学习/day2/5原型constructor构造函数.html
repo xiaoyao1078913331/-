@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function star(name, age) {
+            this.uname = name;
+            this.age = age;
+
+        }
+        star.prototype = {
+           constructor:star,
+            sing: function () {
+                console.log('喜欢唱歌');
+            },
+            run: function () {
+                console.log(this.uname + "喜欢跑步");
+            }
+        }
+
+        var n1 = new star('肖遥', 20);
+        var n2 = new star('肖遥', 20);
+            console.log(n1.__proto__.constructor);
+           console.log(star.prototype.constructor);
+           console.log(n1.__proto__.constructor===star.prototype.constructor); //true
+           
+           n1.sing()
+           n1.run();
+    </script>
+</body>
+
+</html>

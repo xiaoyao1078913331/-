@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.通过字面量创建
+        var person = {
+            name: '小哥',
+            age: 20,
+            run: function () {
+                console.log('1');
+
+            }
+        }
+
+        // 2.利用object创建
+        var person2 = new Object();
+        person2.name = 'hello';
+        person2.sing = function () {
+            console.log('11');
+
+        }
+
+        // 3.利用构造函数创建
+        function p3(name, age) {
+            this.uname = name;
+            this.age = age;
+            this.keep = function () {
+                console.log(this.uname + '喜欢打篮球');
+
+            }
+        }
+        var p4 = new p3('张三', 20);
+        console.log(p4);
+        
+    </script>
+</body>
+
+</html>

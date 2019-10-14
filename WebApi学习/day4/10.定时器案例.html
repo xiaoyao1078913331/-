@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            padding: 50px 10px 10px;
+            width: 150px;
+            height: 200px;
+            margin: 100px auto;
+            text-align: center;
+            background-color: rgb(232, 54, 50);
+            box-sizing: border-box;
+        }
+
+        .box h2 {
+            font-weight: 400;
+            color: white;
+
+        }
+
+        .box p {
+            color: rgb(243, 154, 152);
+            margin-bottom: 20px;
+        }
+
+        .box span {
+            font-size: 12px;
+            color: white;
+
+        }
+
+        .aa div {
+            float: left;
+            width: 30px;
+            color: white;
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgb(47, 52, 48);
+            margin: 0 6px;
+        }
+
+        .aa {
+            overflow: hidden;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>京东秒杀</h2>
+        <p>FLASH DEALS</p>
+        <span>本场距离结束还剩</span>
+        <div class="aa">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2019-8-28 13:00:00');
+        //首先先调用一次，让页面显示当前倒计时的时间
+        getTime();
+        setInterval(getTime,1000);
+
+        function getTime(){
+            //后去当前时间戳
+            var newTime=+new Date();
+            //输入时间-当前时间/1000得到秒
+            var time=(inputTime-newTime)/1000;
+            
+            var h=parseInt(time/60/60%24);
+            h=h<10?'0'+h:h;
+            hour.innerHTML=h;
+
+            var m=parseInt(time/60%60);
+            m=m<10?'0'+m:m;
+            minute.innerHTML=m;
+
+            var s=parseInt(time%60);
+            s=s<10?'0'+s:s;
+            second.innerHTML=s;
+        }
+       
+    </script>
+</body>
+
+</html>

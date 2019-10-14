@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        //  将类数组或可遍历对象转换为真正的数组
+        let lis=document.querySelector('ul').querySelectorAll('li');
+        var ary=[...lis]
+        console.log(ary);
+        ary.push('a')
+        console.log(ary);
+        
+    </script>
+</body>
+</html>

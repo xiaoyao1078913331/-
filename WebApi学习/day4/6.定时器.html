@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.setTimeout(调用函数，延时时间)
+        // 2.这个延迟时间单位是毫秒，可以省略，如果省略那么磨人的就是0
+        // 3.给定时器起一个名字
+
+
+        // setTimeout(function(){
+        //     console.log('输出了');
+            
+        // },2000)
+
+        function calback(){
+            console.log('爆炸了');
+            
+        }
+      var time=setTimeout(calback,3000);
+      var time=setTimeout(calback,5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // apply改变this指向
+
+        // 1.也是调用函数，
+        // 2.改变函数内部的this指向
+        // 3.传递参数必须是数组
+          var o={
+             name:'andy'
+        }
+        function fn(arr){
+            console.log(this);
+            // console.log(a+b);
+        }
+        fn.apply(o,[2,7]);
+
+        // 3.apply的主要应用  利用apply借助于数学内置对象   求最大值
+        var arr=[1,34,3,95,23];
+        var max=Math.max.apply(Math,arr)
+        var min=Math.min.apply(Math,arr)
+        console.log(max);
+        console.log(min);
+        
+    </script>
+</body>
+</html>

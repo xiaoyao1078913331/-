@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将类对象转换为真正的数组
+        // let person={
+        //     '0':'肖遥',
+        //     '1':'男',
+        //     '2':21,
+        //     length:3
+        // }
+        // let arr2=Array.from(person);
+        // console.log(arr2);
+
+        //用于类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组
+        let person={
+            '0':'1',
+            '1':'2',
+            '2':'3',
+            length:3
+        }
+       
+        
+        let arr3=Array.from(person,item => item*2)
+        console.log(arr3);
+        
+    </script>
+</body>
+</html>

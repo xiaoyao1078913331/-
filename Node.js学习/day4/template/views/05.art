@@ -1,0 +1,9 @@
+{{extend './commen/layout.art'}}
+
+{{block 'content'}}
+    <P>{{msg}}</P>
+{{/block}}
+
+{{block 'link'}}
+   <link rel="stylesheet" type="text/css" href="./main/.css">
+{{/block}}

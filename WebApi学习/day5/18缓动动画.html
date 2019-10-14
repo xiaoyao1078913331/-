@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 200px;
+            background-color: pink;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+  
+    <button>点击</button>
+    <script>
+        var box1 = document.querySelector('.box1');
+        var p=document.querySelector('p');
+        var btn=document.querySelector('button');
+        function fn(obj,target){
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                var step=Math.floor((target-obj.offsetLeft)/15);
+                console.log(step);
+                
+                if(obj.offsetLeft==target){
+                    clearInterval(obj.timer);
+                }else{
+                    obj.style.left=obj.offsetLeft+step+'px';
+                }
+            },30)
+        }
+
+        btn.addEventListener('click',function(){
+            fn(box1, 400);
+        })
+       
+      
+    </script>
+</body>
+
+</html>

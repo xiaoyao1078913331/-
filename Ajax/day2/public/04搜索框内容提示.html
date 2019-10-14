@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>搜索框输入文字自动提示</title>
+	<link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.min.css">
+	<style type="text/css">
+		.container {
+			padding-top: 150px;
+		}
+		.list-group {
+			display: none;
+		}
+        input{
+             
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="请输入搜索关键字" id="search">
+			<ul class="list-group" id="list-box">
+				
+			</ul>
+		</div>
+	</div>
+    
+    <script src="/js/template-web.js"></script>
+    <script src="./js/ajax.js"></script>
+    
+    <script type="text/html" id="seach" >
+        {{each result}}
+            <li class="list-group-item">{{$value}}</li>
+        {{/each}}
+    </script>
+
+    <script>
+        var group=document.querySelector('.list-group');
+        var keyRel=document.querySelector('#search');
+        var timer=null;
+        keyRel.oninput=function(){
+            //清除上一次的请求
+            clearTimeout(timer);
+            var key=this.value;
+            //如果搜索框的内容长度为0就影藏下拉框
+            if(key.trim().length==0){
+                group.style.display='none';
+                //阻止程序向下执行
+                return;
+            }
+
+        timer=setTimeout(() => {
+            ajax({
+                type:'get',
+                url:'http://localhost:3000/searchAutoPrompt',
+                data:{
+                    key:key
+                },
+                success:function(result){
+                    
+                   var html=template('seach',{result:result});
+                    //显示下拉类表
+                   group.style.display='block';
+                   group.innerHTML=html;
+                }
+            })
+           }, 400);
+            
+       }
+    </script>
+</body>
+</html>

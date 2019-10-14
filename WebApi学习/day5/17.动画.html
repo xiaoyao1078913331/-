@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        p{
+            position: absolute;
+            top: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <p>先天</p>
+    <button>点击</button>
+    <script>
+        var box1 = document.querySelector('.box1');
+        var p=document.querySelector('p');
+        var btn=document.querySelector('button');
+        function fn(obj,target){
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                if(obj.offsetLeft>=target){
+                    clearInterval(obj.timer);
+                }else{
+                    obj.style.left=obj.offsetLeft+5+'px';
+                }
+            },30)
+        }
+
+        btn.addEventListener('click',function(){
+            fn(p,400);
+        })
+        fn(box1, 200);
+      
+    </script>
+</body>
+
+</html>

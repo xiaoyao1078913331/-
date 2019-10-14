@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        $(function(){
+            console.log($('div').css('width'));
+            
+            $('div').css({
+                // 如果是复合属性则必须采取驼峰命名
+                backgroundColor:'red',
+                width:300,
+                height:400
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.父构造函数
+        function father(name, age) {
+            this.uname = name;
+            this.age = age;
+        }
+        father.prototype.monny = function () {
+            console.log('我很有钱');
+        }
+        //2.子构造函数
+        function son(name, age, score) {
+            father.call(this, name, age);
+            this.score = score;
+        }
+        // 把实例化的对象赋值给prototype
+        son.prototype = new father();
+        //如果利用对象的形式修改了原型对象，
+        // 别忘记利用constructor指向原来的原型对象
+        son.prototype.constructor = son;
+        son.prototype.exam = function () {
+            console.log('孩子们要考试了');
+        }
+        var p1 = new son('小哥', 20, 20)
+        console.log(p1);
+        console.log(father.prototype);
+        console.log(son.prototype.constructor);
+        
+    </script>
+</body>
+
+</html>

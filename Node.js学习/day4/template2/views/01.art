@@ -1,0 +1,20 @@
+{{extend '../common/layout.art'}}
+    
+    {{block 'main'}}
+    {{each user }}
+
+        {{if $value.age>18}}
+            <p>{{$value.name}}</p>
+            <p>{{$value.age}}</p>
+            <p>{{dateformate($value.time,'yyyy-mm-dd')}}</p>
+        {{/if}}
+
+    {{/each}}
+
+    <% for(var i=0;i<user.length;i++) {%>
+        <p><%= user[i].name%></p>
+        <p><%= user[i].age%></p>
+        <p><%= dateformate(user[i].time,'yyyy-mm-dd') %></p>
+    <% }%>
+
+    {{/block}}
